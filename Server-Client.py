@@ -132,7 +132,7 @@ class Server():
                 #首先私钥解密
                 n,d = self.private_key
                 plainKey = pow(cipherKey,d,n)
-                if oaep_flag == 1:
+                if self.oaep_flag == 1:
                     plainKey = oaep_decode(plainKey)
                 plainKey = bit_mask(128) & plainKey
                 #这里得到了AESKey
